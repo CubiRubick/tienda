@@ -2,7 +2,7 @@
 
 # clonar repositorio con el git clone
 
-#instalar las dependencias 
+# instalar las dependencias 
 pip install -r requirements.txt
 
 # realizar migraciones
