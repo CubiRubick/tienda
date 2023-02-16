@@ -1,6 +1,7 @@
 # tienda
 
 # clonar repositorio con el git clone
+git clone https://github.com/CubiRubick/tienda.git
 
 # instalar las dependencias 
 pip install -r requirements.txt
