@@ -1,5 +1,5 @@
 from django.contrib import admin
-from basar.models import (User, personalinfo, productinfo)
+from basar.models import (User, personalinfo, productinfo, comments)
 # Register your models here.
 class useradmin(admin.ModelAdmin):
     class Meta:
@@ -18,3 +18,9 @@ class prodinfoadmin(admin.ModelAdmin):
         model = productinfo
 
 admin.site.register(productinfo, prodinfoadmin)
+
+class commentsadmin(admin.ModelAdmin):
+    class Meta:
+        model = comments
+
+admin.site.register(comments, commentsadmin)

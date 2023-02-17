@@ -36,6 +36,7 @@ class productinfo(models.Model):
     personalinfo = models.ForeignKey(personalinfo, related_name='perfonalinfo', on_delete=models.PROTECT, null=True, blank=True)
     nameproduct = models.CharField(max_length=120, null=True, blank=True)
     description = models.CharField(max_length=250, null=True, blank=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     category = models.CharField(max_length=120, null=True, blank=True)
     units = models.IntegerField(null=True, blank=True)
     review = models.IntegerField(null=True, blank=True)
@@ -48,4 +49,14 @@ class productinfo(models.Model):
     def __unicode__(self):
         return self.nameproduct
 
+class comments(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, related_name='commentsuser', on_delete=models.PROTECT, null=True, blank=True)
+    product = models.ForeignKey(productinfo, related_name='commentsprodcut', on_delete=models.PROTECT, null=True, blank=True)
+    comment = models.CharField(max_length=500, null=True, blank=True)
 
+    def __str__(self):
+        return str(self.id)
+
+    def __unicode__(self):
+        return str(self.id)
