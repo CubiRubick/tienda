@@ -23,6 +23,7 @@ class personalinfo(models.Model):
     zipcode = models.IntegerField(null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
     city = models.CharField(max_length=150, null=True, blank=True)
+    colony = models.CharField(max_length=120, null=True, blank=True)
 
     def __str__(self):
         return self.firstname
@@ -34,8 +35,10 @@ class productinfo(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     personalinfo = models.ForeignKey(personalinfo, related_name='perfonalinfo', on_delete=models.PROTECT, null=True, blank=True)
     nameproduct = models.CharField(max_length=120, null=True, blank=True)
+    description = models.CharField(max_length=250, null=True, blank=True)
     category = models.CharField(max_length=120, null=True, blank=True)
     units = models.IntegerField(null=True, blank=True)
+    review = models.IntegerField(null=True, blank=True)
     image = models.ImageField(default=None, null=True, blank=True)
     in_existence = models.BooleanField(default=False, null=True, blank=True)
 
