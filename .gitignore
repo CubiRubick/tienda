@@ -1,3 +1,4 @@
 db.sqlite3
 *000*.py
 __pycache__/
+node_modules/
