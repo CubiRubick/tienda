@@ -1,12 +1,6 @@
 from django.contrib import admin
-from basar.models import (User, personalinfo, productinfo, comments)
+from basar.models import (personalinfo, productinfo, comments)
 # Register your models here.
-class useradmin(admin.ModelAdmin):
-    class Meta:
-        model = User
-
-admin.site.register(User, useradmin)
-
 class perinfoadmin(admin.ModelAdmin):
     class Meta:
         model = personalinfo

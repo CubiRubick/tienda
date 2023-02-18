@@ -2,3 +2,6 @@ djangorestframework
 django
 pillow
 django-filter
+dj-rest-auth
+django-allauth
+djangorestframework-simplejwt
